@@ -4,7 +4,12 @@ const task = require('../models/taskModels')
 exports.getAllTask = async (req, res) => {
     try {
         const Task = await task.find()
-        res.render('index')
+        console.log(Task)
+       res.render('index',{Task })
+    //   res.status(200).json({
+    //     success: true,
+    //     Task
+    // })
     } catch (err) {
         console.log(err);
     }
@@ -15,10 +20,12 @@ exports.createTask = async (req, res) => {
     try {
         console.log(req.body)
         const Task = await task.create(req.body)
+        // res.render('index',{Task })
         res.status(200).json({
             success: true,
             Task
         })
+        
     } catch (err) {
         console.log(err);
     }

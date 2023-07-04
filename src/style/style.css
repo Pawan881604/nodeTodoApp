@@ -1,0 +1,105 @@
+header, 
+.form_class{
+    max-width:500px;
+    margin:auto auto;
+}
+
+.desc_Class{
+    width:100%;
+    border:1px solid #0000004f;
+  overflow:hidden;
+    padding: 5px 10px;
+  
+}
+.desc_Class input{
+    width:100%;
+    height:30px;
+    border-radius:10px;
+    padding: 0px 10px;
+    border:none;
+     outline:none !important;
+}
+.select_and_input{
+    display:flex;
+    justify-content:space-around;
+    width:100%;
+    border:1px solid #0000004f;
+  overflow:hidden;
+    padding: 5px 10px;
+}
+.select_and_input input,select{
+     width:100%;
+    height:30px;
+    border:1px solid #00000054;
+    outline:none !important;
+}
+.select_and_input div{
+     width:100%;
+    padding:10px 0px;
+}
+.btn-cont{
+    display:flex;
+    justify-content:center;
+    margin:15px 0px;
+    gap:10px;
+}
+.btn-cont button{
+    padding:10px 20px;
+}
+.btn-cont button:nth-child(1){
+    background:gray;
+    border:none;
+    color:#fff;
+}
+.btn-cont button:nth-child(2){
+    background:red;
+    border:none;
+    color:#fff;
+}
+
+.list-cont2 {
+    display:flex;
+    gap:20px;
+    align-items: start;
+}
+.list-cont2 p{
+    margin:0px;
+    padding-bottom:10px;
+}
+
+.list-cont2 input{
+    width:10%;
+}
+.list-cont2 label{
+    width:90%;
+}
+.para-cont p{
+    width:100%;
+}
+.para-cont{
+    display:flex;
+    width: 100%;
+}
+.para-cont p:nth-child(2) {
+    text-align: end;
+}
+.para-cont span{
+    padding-right: 10px;
+}
+.listarea{
+    padding:40px 0px;
+}
+.listarea .list-cont2:nth-child(odd){
+    background:#dedede;
+    padding:10px;
+}
+.listarea .list-cont2:nth-child(even){
+    background:#ffeaea;
+    padding:10px;
+}
+.list-cont2 p:nth-child(2) span{
+    background:#413131;
+    color:#fff;
+    padding:10px 10px
+    
+}

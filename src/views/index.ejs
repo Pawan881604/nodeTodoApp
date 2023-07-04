@@ -1,32 +1,68 @@
 <%- include('./header') %>
-<header>
-    <!-- Header file for TODO Application -->
-    <div class="todoheading">
-        <h1>TODO APPLICATION</h1>
+    <header>
+        <!-- Header file for TODO Application -->
+        <div class="todoheading">
+            <h1>TODO APPLICATION</h1>
+        </div>
+    </header>
+    <!-- HTMl section for main home page -->
+    <div class="form_class">
+        <form id="getdatafromform" action="/task" method="POST">
+            <div class="desc_Class">
+                <label for="desc"> Description</label><br>
+                <input id="desc" type="textarea" required name="description" placeholder="what do you need to do">
+            </div>
+            <div class="select_and_input">
+                <div>
+                    <label for="desc"> Category</label><br>
+                    <select id="cate" name="category" required>
+                        <option value="" disabled selected>Select your option</option>
+                        <option>Personal</option>
+                        <option>Work</option>
+                        <option>Claeaning</option>
+                        <option>Otheres</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="date">Due Date</label><br>
+                    <input id="date" class="datesValues" type="date" name="dueDate" placeholder="Due data dd/mm/yyyy"
+                        required>
+                </div>
+            </div>
+            <div class="btn-cont">
+                <button class="buttonDesign colorGrey" id="submitButton" type="submit"><i class="fa fa-plus-square">
+                    </i>
+                    Add
+                    Task</button>
+                <button class="buttonDesign colorRed" id="deleteButton"><i class="fa fa-trash-o"></i> Delete
+                    Task</button>
+                <div>
+                </div>
+
+        </form>
+
+
     </div>
-</header>
-<!-- HTMl section for main home page -->
-<div class="form_class">
-    <form id="getdatafromform" action="/" method="POST">
-        <div class="desc_Class">
-            <input id="desc" type="textarea" required name="desc" placeholder="what do you need to do">
-        </div>
-        <div class="select_and_input">
-            <select id="cate" name="category" required>
-                <option value="" disabled selected>Select your option</option>
-                <option>Personal</option>
-                <option>Work</option>
-                <option>Claeaning</option>
-                <option>Otheres</option>
-            </select>
-            <input id="date" class="datesValues" type="date" name="dateValue" placeholder="Due data dd/mm/yyyy" required>
-        </div>
-        <button class="buttonDesign colorGrey" id="submitButton" type="submit"><i class="fa fa-plus-square"> </i> Add
-            Task</button>
-        <!-- <button class="buttonDesign colorRed" id="deleteButton" type="submit"><i class="fa fa-trash-o"></i> Delete
-            Task</button> -->
+    <div class="listarea">
+        <% Task.forEach(task=> { %>
+            <div class="list-cont2">
+                <input type="checkbox" id="<%= task._id %>" name="taskCheckbox" value="<%= task._id %>">
+                <label for="<%= task._id %>">
+                    <p>
+                        <%= task.description %>
+                    </p>
 
-    </form>
-
-</div>
-<%- include('./footer') %>
+                    <div class="para-cont">
+                        <p><span><i class="fa-solid fa-calendar-days"></i></span>
+                            <%= task.dueDate %>
+                        </p>
+                        <p>
+                          <span>  <%= task.category %></span>
+                        </p>
+                    </div>
+                </label>
+            </div>
+            <% }) %>
+    </div>
+    </div>
+    <%- include('./footer') %>
